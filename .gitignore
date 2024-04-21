@@ -1,0 +1,9 @@
+.DS_Store
+.idea/
+.vscode
+
+.venv/
+venv/
+
+tmp/aram_list.txt
+tmp/park_list.txt
