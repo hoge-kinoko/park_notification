@@ -18,7 +18,7 @@ class ParkInfo:
         self.__war_start_at: datetime.datetime = info["war_start_at"]
 
     def __str__(self):
-        return self.__notification_text
+        return f":{self.emoji}:`{self.server}鯖 {self.no}番 {self.war_start_at.strftime('%H:%M:%S')}`"
 
     @property
     def emoji(self) -> str:
@@ -135,4 +135,4 @@ class Aram:
                 if now >= park.war_start_at - datetime.timedelta(minutes=aram_type):
                     AramHistory.save(self.__aram_history_path, park.server, park.no, park.war_start_at, aram_type)
                     Discord.send(message=f"@here {park} @約{aram_type}分前")
-                    print("@here", park, f"@{aram_type}分前")
+                    print("@here", park, f"@約{aram_type}分前")
